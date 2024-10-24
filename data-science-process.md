@@ -82,3 +82,17 @@ A data science project typically follows a well-defined set of stages, from unde
 ## Conclusion
 Each stage in a data science project is essential for ensuring that the final solution is accurate, reliable, and meaningful. By following these steps, data scientists can systematically approach complex problems and deliver impactful insights.
 
+# Handling Missing Data in a Dataset
+
+Missing data is a common problem in datasets, and it must be handled carefully to ensure that the analysis or model built on the data is accurate and meaningful. There are various techniques to deal with missing data, depending on the nature and quantity of the missing values.
+
+## 1. **Identify Missing Data**
+   - **Objective:** Detect missing values in the dataset.
+   - **Key Tasks:**
+     - Use descriptive statistics or visualizations to identify missing values.
+     - Use tools or functions (e.g., `isnull()` in Python’s Pandas) to summarize missing values for each feature.
+     
+   ```python
+   # Example in Python (using Pandas)
+   missing_data = df.isnull().sum()
+   print(missing_data) ```
