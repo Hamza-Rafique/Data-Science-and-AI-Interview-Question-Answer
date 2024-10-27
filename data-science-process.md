@@ -95,8 +95,8 @@ Missing data is a common problem in datasets, and it must be handled carefully t
    ```python
    # Example in Python (using Pandas)
    missing_data = df.isnull().sum()
-   print(missing_data) ```
-
+   print(missing_data) 
+  ```
 
 # Difference Between Data Normalization and Data Standardization
 
