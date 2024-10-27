@@ -96,3 +96,62 @@ Missing data is a common problem in datasets, and it must be handled carefully t
    # Example in Python (using Pandas)
    missing_data = df.isnull().sum()
    print(missing_data) ```
+
+
+# Difference Between Data Normalization and Data Standardization
+
+In data preprocessing, **normalization** and **standardization** are common techniques for scaling data, each with distinct purposes and applications. Here’s an overview of their differences:
+
+## Data Normalization
+
+### Purpose
+Normalization scales data to a specific range, typically between 0 and 1, to make it easier to compare across features of different scales.
+
+### Method
+Normalization often uses **Min-Max Scaling**:
+\[
+\text{Normalized Value} = \frac{(X - X_{\text{min}})}{(X_{\text{max}} - X_{\text{min}})}
+\]
+- \( X \) is the original value.
+- \( X_{\text{min}} \) and \( X_{\text{max}} \) are the minimum and maximum values in the dataset.
+
+### Use Cases
+Ideal for machine learning models that rely on distances between data points, such as:
+- **K-Nearest Neighbors (KNN)**
+- **Neural Networks**
+
+These models perform better with normalized data since features on a common scale reduce bias due to varying scales.
+
+---
+
+## Data Standardization
+
+### Purpose
+Standardization transforms data to have a mean of 0 and a standard deviation of 1, creating a standard normal distribution. This centers the data around zero, adjusting for variance.
+
+### Method
+Standardization often uses **Z-Score Scaling**:
+\[
+\text{Standardized Value} = \frac{(X - \mu)}{\sigma}
+\]
+- \( \mu \) is the mean of the dataset.
+- \( \sigma \) is the standard deviation.
+
+### Use Cases
+Best for models that assume normally distributed data or are sensitive to variance, such as:
+- **Support Vector Machines (SVM)**
+- **Principal Component Analysis (PCA)**
+- **Linear Regression**
+
+---
+
+## Key Differences
+
+- **Range**: Normalization maps data within a specified range (commonly 0-1), whereas standardization transforms data to a mean of 0 and a standard deviation of 1.
+- **Application**: Use normalization when working with algorithms that depend on distances (e.g., KNN) and standardization for models that benefit from normalized variances.
+
+## Example
+
+If a dataset includes features like **age** and **salary**, where values differ in range, normalization is beneficial for distance-based models like KNN. In contrast, standardization suits algorithms like SVM, which rely on data having a normal distribution for optimal performance.
+
+
